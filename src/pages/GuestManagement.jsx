@@ -176,7 +176,7 @@ function GuestManagement() {
                                             <Form.Group className="mb-3">
                                                 <Form.Label>Distintivo</Form.Label>
                                                 <Form.Control
-                                                    type="text" name="ant_nombres" required
+                                                    type="text" name="ant_nombres"
                                                     value={formData.ant_nombres} onChange={handleChange}
                                                 />
                                             </Form.Group>
@@ -237,7 +237,7 @@ function GuestManagement() {
                                     <Form.Group className="mb-4">
                                         <Form.Label>Detalle Pase</Form.Label>
                                         <Form.Control
-                                            type="text" name="pases_add" min="1" required
+                                            type="text" name="pases_add" min="1"
                                             value={formData.pases_add} onChange={handleChange}
                                         />
                                     </Form.Group>
