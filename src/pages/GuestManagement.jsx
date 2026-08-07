@@ -61,7 +61,7 @@ function GuestManagement() {
                 setStatusGuest({ type: 'success', mensaje: response.mensaje })
                 setFormData({ nombres: '', ap_p: '', ap_m: '', telefono: '', pases: 1, ant_nombres: '', pases_add: '' })
                 listarGuests(true)
-            }).catch((error) => setStatus({ type: 'danger', message: `[Error ${error.status}]: ${error.mensaje}` }))
+            }).catch((error) => setStatusGuest({ type: 'danger', message: `[Error ${error.status}]: ${error.mensaje}` }))
     }
 
     useEffect(() => {
