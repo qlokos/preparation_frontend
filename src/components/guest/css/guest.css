@@ -1,0 +1,12 @@
+.papel-tapiz {
+    /* 1. Reemplaza con la ruta local (ej. './fondo.jpg') o URL de tu imagen */
+    background-image: url('/src/assets/papel-tapiz.jpg');
+    /* 2. Hace que la imagen cubra toda la pantalla sin estirarse feo */
+    background-size: cover;
+    /* 3. Mantiene la imagen perfectamente centrada */
+    background-position: center;
+    /* 4. Evita que la imagen se repita en pantallas muy grandes */
+    background-repeat: no-repeat;
+    /* 5. Opcional: Mantiene el fondo fijo mientras haces scroll si el contenido es largo */
+    background-attachment: fixed;
+}
