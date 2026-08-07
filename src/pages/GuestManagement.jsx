@@ -57,8 +57,8 @@ function GuestManagement() {
         setStatusGuest({ type: '', message: '' })
 
         peticionService('prep/invitados/register', methods.POST, formData)
-            .then(() => {
-                setStatusGuest({ type: 'success', mensaje: response.mensaje })
+            .then((response) => {
+                // setStatusGuest({ type: 'success', message: response.mensaje })
                 setFormData({ nombres: '', ap_p: '', ap_m: '', telefono: '', pases: 1, ant_nombres: '', pases_add: '' })
                 listarGuests(true)
             }).catch((error) => setStatusGuest({ type: 'danger', message: `[Error ${error.status}]: ${error.mensaje}` }))
@@ -166,8 +166,8 @@ function GuestManagement() {
                             </Card.Header>
                             <Card.Body className="p-4">
 
-                                {status.message && (
-                                    <Alert variant={status.type}>{status.message}</Alert>
+                                {statusGuest.message && (
+                                    <Alert variant={statusGuest.type}>{statusGuest.message}</Alert>
                                 )}
 
                                 <Form onSubmit={handleSubmit}>
