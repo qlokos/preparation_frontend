@@ -58,7 +58,6 @@ function Guest() {
 
     const mensajeConfigrmacion = `¡Hola! Confirmo mi asistencia a la boda de Karen y Renzo. ✨
 Mi nombre es: [nombres_completo]
-Asistiré con: [pases] personas.
 ¡Nos vemos pronto!`
 
     const reemplarDatosMensaje = (texto) => {
