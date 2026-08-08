@@ -190,7 +190,7 @@ Mi nombre es: [nombres_completo]
                                             // Efecto interactivo al pasar el mouse o presionar en pantallas táctiles
                                             onMouseEnter={(e) => e.target.style.backgroundColor = '#5C2128'}
                                             onMouseLeave={(e) => e.target.style.backgroundColor = '#722F37'}
-                                            onClick={confirmarGuest()}
+                                            onClick={confirmarGuest}
                                         >
                                             💬 Confirmar Asistencia por WhatsApp
                                         </Button>
