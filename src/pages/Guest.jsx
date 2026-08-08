@@ -50,6 +50,12 @@ function Guest() {
             })
     }
 
+    const confirmarGuest = () => {
+        peticionService(`prep/confirmacion/${id}`, methods.GET)
+            .then((datos) => console.log(error))
+            .catch((error) => console.log(error))
+    }
+
     useEffect(() => {
         if (id) {
             buscarGuest()
@@ -184,6 +190,7 @@ Mi nombre es: [nombres_completo]
                                             // Efecto interactivo al pasar el mouse o presionar en pantallas táctiles
                                             onMouseEnter={(e) => e.target.style.backgroundColor = '#5C2128'}
                                             onMouseLeave={(e) => e.target.style.backgroundColor = '#722F37'}
+                                            onClick={confirmarGuest()}
                                         >
                                             💬 Confirmar Asistencia por WhatsApp
                                         </Button>
