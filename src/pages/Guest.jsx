@@ -111,7 +111,6 @@ Mi nombre es: [nombres_completo]
                                         autoPlay
                                         muted
                                         playsInline
-                                        preload="auto"
                                         className="w-100 rounded"
                                         controlsList="nodownload"
                                         onContextMenu={(e) => e.preventDefault()}
