@@ -105,6 +105,7 @@ Mi nombre es: [nombres_completo]
                                         autoPlay
                                         muted
                                         playsInline
+                                        preload="auto"
                                         className="w-100 rounded"
                                         controlsList="nodownload"
                                         onContextMenu={(e) => e.preventDefault()}
@@ -123,10 +124,10 @@ Mi nombre es: [nombres_completo]
                                         className="position-absolute top-50 start-50 translate-middle d-flex align-items-center gap-2 opacity-90 shadow-lg py-2 px-3 bootstrap-unmute-btn"
                                         style={{ zIndex: 10, borderRadius: '30px' }}
                                     >
-                                        <h1>
+                                        <h2>
                                             {/* 🔊 <span className="fw-bold small">Activar Sonido</span> */}
                                             ▶️ <span className="fw-bold small">Dale play a nuestra canción</span>
-                                        </h1>
+                                        </h2>
                                     </Button>)}
                                 </Card>
 
