@@ -10,13 +10,24 @@ function Guest() {
     const { id } = useParams()
     const navigate = useNavigate()
 
+    const urlVideo = import.meta.env.VITE_VIDEO_MAIN_URL;
+    const urlVideoAlt = import.meta.env.VITE_VIDEO_ALTERNATIVE_URL;
+
     const videoRef = useRef(null)
     const [isMuted, setIsMuted] = useState(true)
+    const [videoSrc, setVideoSrc] = useState(urlVideo)
 
     const [loading, setLoading] = useState(true)
     const [error, setError] = useState(false); // Errores de servidor/red
     const [guest, setGuest] = useState(null)
 
+
+    const handleVideoError = () => {
+        // Solo cambia si hay una URL alternativa definida y no estamos ya en ella
+        if (urlVideoAlt && videoSrc !== urlVideoAlt) {
+            setVideoSrc(urlVideoAlt);
+        }
+    };
 
 
     useEffect(() => {
@@ -106,7 +117,8 @@ Mi nombre es: [nombres_completo]
                                 <Card className="shadow-sm p-1 p-sm-2 mb-3 bg-white rounded border-0">
                                     <video
                                         ref={videoRef}
-                                        src="https://preparation.webhop.me/preparation-ws/video/invitacion.mp4"
+                                        src={videoSrc}
+                                        onError={handleVideoError}
                                         controls
                                         autoPlay
                                         muted
