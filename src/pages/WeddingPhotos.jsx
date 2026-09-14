@@ -8,9 +8,13 @@ import VisualizadorModal from '../components/wedding_photos/ViewModal'
 import PapelTapizCabecera from '../assets/papel-tapiz-cabecera.png'
 
 const socket = io(import.meta.env.VITE_API_URL, {
-    transports: ['websocket'],
+    transports: ['polling', 'websocket'],
     withCredentials: true,
-    upgrade: false
+    upgrade: false,
+    autoConnect: true,
+    reconnection: true,
+    reconnectionAttempts: 5,
+    reconnectionDelay: 2000
 })
 
 export default function BodaFotos() {
@@ -91,6 +95,14 @@ export default function BodaFotos() {
     }, [])
 
     useEffect(() => {
+        socket.on('connect', () => {
+            console.log('✅ ¡Frontend conectado');
+        });
+
+        socket.on('connect_error', (error) => {
+            console.error('❌ Error de conexión con el WebSocket:', error.message);
+        });
+
         socket.on('boda:nuevas-fotos', (escucha) => {
             mostrarFotos(true)
         })
