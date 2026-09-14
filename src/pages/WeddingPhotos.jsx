@@ -8,7 +8,7 @@ import VisualizadorModal from '../components/wedding_photos/ViewModal'
 import PapelTapizCabecera from '../assets/papel-tapiz-cabecera.png'
 
 const socket = io(import.meta.env.VITE_API_URL, {
-    transports: ['polling', 'websocket'],
+    transports: ['websocket'],
     withCredentials: true,
     upgrade: false,
     autoConnect: true,
