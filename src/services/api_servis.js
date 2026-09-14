@@ -42,3 +42,30 @@ export const peticionService = async (endpoint, method = methods.GET, datos = nu
         throw { status: 500, message: `Error en la petición ${endpoint}` }
     }
 }
+
+export const peticionServiceFile = async (endpoint, method = methods.GET, datos = null) => {
+    try {
+        const conf = {
+            method: method.key,
+            headers: {
+                'x-api-key': import.meta.env.VITE_API_SECRET
+            }
+        }
+
+        if (datos && method.isEnvData) {
+            conf.body = datos
+        }
+
+        const response = await fetch(`${URL_BASE}${endpoint}`, conf)
+        const json = await response.json()
+
+        if (!response.ok) {
+            throw { status: response.status, message: `Error en el servidor (${response.status}) ${json.mensaje ? `: ${json.message}` : ''}` }
+        }
+
+        return json
+    } catch (error) {
+        // console.error(`Error en la petición ${endpoint}:`, error)
+        throw { status: 500, message: `Error en la petición ${endpoint}` }
+    }
+}
