@@ -7,7 +7,7 @@ import { io } from 'socket.io-client'
 import VisualizadorModal from '../components/wedding_photos/ViewModal'
 import PapelTapizCabecera from '../assets/papel-tapiz-cabecera.png'
 
-const socket = io(import.meta.env.VITE_API_URL, {
+const socket = io(import.meta.env.VITE_SOCKET_URL, {
     path: '/preparation-ws/socket.io',
     transports: ['websocket'],
     withCredentials: true,
